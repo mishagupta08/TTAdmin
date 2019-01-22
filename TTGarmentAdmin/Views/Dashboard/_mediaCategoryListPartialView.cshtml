@@ -1,0 +1,161 @@
+﻿@model TTGarmentAdmin.Models.DashboardModel
+@*@using GridMvc.Html*@
+@{
+    ViewBag.Title = "_promotionListPartialView";
+    Layout = null;
+}
+
+@*<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />*@
+
+<style>
+    .box-style {
+        width: 25% !important;
+        display: inline-block !important;
+        height: 38px !important;
+        margin: 0px 29px !important;
+    }
+
+    .search-button-style {
+        display: inline-block;
+        width: 13%;
+        height: 36px;
+        margin-left: 5%;
+        margin-top: -5px;
+    }
+
+    table.grid-table {
+        font-size: 11px;
+    }
+</style>
+
+@helper CustomRenderingOfStatusColumn(string Id, bool? status)
+{
+var statusValue = "";
+if (status == true)
+{
+    statusValue = "DeActivate";
+}
+else
+{
+    statusValue = "Activate";
+}
+
+    <span id="@Id" name="mediaStatus" style="color:blue; text-decoration-line:underline; cursor:pointer; ">@statusValue</span>
+}
+
+@helper CustomRenderingOfActionColumn(string Id)
+{
+    <a href="@Url.Action("MediaCategoryByIdView", "Dashboard", new { Id = Id })"><img src="~/images/edit.png" height="20" name="editMember" /></a>
+}
+
+<div class="card mb-3" id="responseContainer">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Media Categy List
+        <button id="export" class="btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light" style="float: right;  width: 10% !important;  margin: 0px !important;">Export</button>
+    </div>
+    <div class="card-body">
+        @if (Model.MediaCategoryList == null || Model.MediaCategoryList == null || Model.MediaCategoryList.Count == 0)
+        {
+            <div>No record Found</div>
+        }
+        else
+        {
+            <div style="margin-top:10px;" class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var media in Model.MediaCategoryList)
+                        {
+                            <tr>
+                                <td>@media.Id</td>
+                                <td>@media.Category</td>
+                                <td>
+                                    @CustomRenderingOfStatusColumn(media.Id, media.IsActive)
+                                </td>
+                                <td>@CustomRenderingOfActionColumn(media.Id)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+@*<div class="col-lg-12" style="margin-left: 5px;" id="responseContainer">
+        @if (Model.MediaCategoryList == null || Model.MediaCategoryList == null || Model.MediaCategoryList.Count == 0)
+        {
+            <div>No record Found</div>
+        }
+        else
+        {
+            /**filters  - Start**/
+            <form data-parsley-validate class="validateForm form-horizontal">
+                <div class="form-group" style="display:inline-block;">
+                    <label>Filter Type</label>
+                    @Html.DropDownListFor(m => m.FilterDetail.SelectedFilterName, new SelectList(Model.FilterDetail.FilterName), new { @required = "0", id = "filterList", name = "filters", @class = "form-control" })
+                </div>
+                <div class="form-group" style="display:inline-block; margin-left:6%">
+                    <label>Filter Value</label>
+                    @Html.TextBoxFor(m => m.FilterDetail.FilterValue, new { @id = "filterValue", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
+                </div>
+
+                <button id="searchButton" data-view="MediaCategory" type="button" class="search-button-style btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light">Search</button>
+            </form>
+            /**filters - End**/
+
+            <button id="export" class="btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light" style="float: right;  width: 10% !important;  margin: 0px !important;">Export</button>
+
+            @Html.Grid(Model.MediaCategoryList).Columns(columns =>
+       {
+           columns.Add(c => c.Id).Encoded(false).Sanitized(false).Titled("Id").Filterable(true);
+           columns.Add(c => c.Category).Encoded(false).Sanitized(false).Titled("Category Name").Filterable(true);
+           columns.Add().Encoded(false).Titled("Status").Sanitized(false).RenderValueAs(o => CustomRenderingOfStatusColumn(o.Id, o.IsActive));
+           columns.Add().Encoded(false).Titled("Action").Sanitized(false).RenderValueAs(o => CustomRenderingOfActionColumn(o.Id));
+       }).WithPaging(15).Sortable(true)
+        }
+
+        <div id="error">@Model.Error</div>
+    </div>*@
+
+<script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+@*<script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>*@
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+
+<script src="~/Scripts/Project/dashboard.js"></script>
+<script src="~/Scripts/jquery.table2excel.min.js"></script>
+
+<script>
+    var jq = $.noConflict();
+    jq(".preloader").hide();
+    jq(document).ready(function () {
+        if (jq("#export").length > 0) {
+            jq("#export").unbind();
+            jq("#export").click(function () {
+                jq("#dataTable").unbind();
+                var dateToday = new Date();
+                jq("#dataTable").table2excel({
+                    exclude: ".noExl",
+                    name: "Excel Document Name",
+                    filename: "MediaCategory-" + dateToday,
+                    fileext: ".xls",
+                    exclude_img: true,
+                    exclude_links: true,
+                    exclude_inputs: true
+                });
+            });
+        }
+    });
+</script>
+
+

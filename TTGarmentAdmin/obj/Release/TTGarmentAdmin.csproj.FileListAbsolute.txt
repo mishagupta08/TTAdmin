@@ -1,0 +1,122 @@
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\ApplicationInsights.config
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\csc.exe
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\vbc.exe
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\VBCSCompiler.exe
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\TTGarmentAdmin.dll.config
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\TTGarmentAdmin.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\TTGarmentAdmin.pdb
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\EPPlus.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\GemBox.Spreadsheet.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\GridMvc.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.Web.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.ApplicationInsights.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Newtonsoft.Json.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\NPOI.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\NPOI.OOXML.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\NPOI.OpenXml4Net.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\NPOI.OpenXmlFormats.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Helpers.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Mvc.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Razor.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Webpages.Deployment.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Webpages.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Webpages.Razor.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\EPPlus.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\GemBox.Spreadsheet.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.Web.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.ApplicationInsights.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\Newtonsoft.Json.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\NPOI.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Razor.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Webpages.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Webpages.Deployment.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Webpages.Razor.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Helpers.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\bin\System.Web.Mvc.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.Properties.Resources.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.csproj.GenerateResource.Cache
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\TTGarmentAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.pdb
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\ApplicationInsights.config
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\csc.exe
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\System.Collections.Immutable.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\System.Reflection.Metadata.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\vbc.exe
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\VBCSCompiler.exe
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\roslyn\VBCSCompiler.exe.config
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\TTGarmentAdmin.dll.config
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\TTGarmentAdmin.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\TTGarmentAdmin.pdb
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\EPPlus.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\GemBox.Spreadsheet.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\GridMvc.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\ICSharpCode.SharpZipLib.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.DependencyCollector.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.Web.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.WindowsServer.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.ApplicationInsights.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.Web.Infrastructure.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Newtonsoft.Json.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\NPOI.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\NPOI.OOXML.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\NPOI.OpenXml4Net.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\NPOI.OpenXmlFormats.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Helpers.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Mvc.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Razor.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Webpages.Deployment.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Webpages.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Webpages.Razor.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\EPPlus.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\GemBox.Spreadsheet.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.DependencyCollector.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.Web.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.AI.WindowsServer.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.ApplicationInsights.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\Newtonsoft.Json.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\NPOI.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Razor.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Webpages.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Webpages.Deployment.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Webpages.Razor.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Helpers.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\bin\System.Web.Mvc.xml
+E:\Workarea\TTAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.csprojResolveAssemblyReference.cache
+E:\Workarea\TTAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.Properties.Resources.resources
+E:\Workarea\TTAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.csproj.GenerateResource.Cache
+E:\Workarea\TTAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.dll
+E:\Workarea\TTAdmin\TTGarmentAdmin\obj\Release\TTGarmentAdmin.pdb

@@ -1,0 +1,211 @@
+﻿@model TTGarmentAdmin.Models.DashboardModel
+@*@using GridMvc.Html*@
+@{
+    ViewBag.Title = "_OrderPartialView";
+    Layout = null;
+}
+
+@*<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />*@
+
+<style>
+    .box-style {
+        width: 25% !important;
+        display: inline-block !important;
+        height: 38px !important;
+        margin: 0px 29px !important;
+    }
+
+    .search-button-style {
+        display: inline-block;
+        width: 13%;
+        height: 36px;
+        margin-left: 5%;
+        margin-top: -5px;
+    }
+
+    table.grid-table {
+        font-size: 11px;
+    }
+</style>
+
+@helper CustomRenderingOfProductColumn(string prodId, string prodName)
+{
+    <span>@prodId # @prodName</span>
+}
+
+@helper CustomRenderingOfAddressColumn(string Address, string city, string state)
+{
+    <span>@Address # @city # @state</span>
+}
+
+@helper CustomRenderingOfActionColumn(string Id, string RetailerID)
+{
+    <div name="updateStatus" style="cursor:pointer;color:blue;" data-id="@Id" data-retailer-id="@RetailerID">Update Status</div>
+}
+
+@****** New code for order ******@
+<div class="card mb-3" id="responseContainer">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Orders List
+        <button id="export" class="btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light" style="float: right;  width: 10% !important;  margin: 0px !important;">Export</button>
+        @*<div style="display:none;">@Html.Raw(Model.TableString)</div>*@
+        @*/**filters  - Start**/*@
+        <form data-parsley-validate style="margin-top:10px; margin-left:50px;" class="validateForm form-horizontal">
+            <div class="form-group" style="display:inline-block;">
+                <label>Filter Type</label>
+                @Html.DropDownListFor(m => m.FilterDetail.SelectedFilterName, new SelectList(Model.FilterDetail.FilterName), new { @required = "0", id = "filterList", name = "filters", @class = "form-control" })
+            </div>
+            <div class="form-group" style="display:inline-block; margin-left:6%">
+                <label>Filter Value</label>
+                @Html.TextBoxFor(m => m.FilterDetail.FilterValue, new { @id = "filterValue", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
+            </div>
+
+            <button id="searchButton" data-view="Order" type="button" class="search-button-style btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light">Search</button>
+        </form>
+        @*/**filters - End**/*@
+    </div>
+    <div class="card-body">
+        @if (Model.OrderList == null || Model.OrderList == null || Model.OrderList.Count == 0)
+        {
+            <div>No record Found</div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Order No</th>
+                            <th>Order Date</th>
+                            <th>Product</th>
+                            <th>Retailer</th>
+                            <th>Address</th>  
+                            <th>City</th>  
+                            <th>State</th>                           
+                            <th>Points Used</th>
+                            <th>Quantity</th>
+                            <th>Order Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var order in Model.OrderList)
+                        {
+                            <tr>
+                                <td>@order.Id</td>
+                                <td>@order.OrderNo</td>
+                                <td>@order.DateString</td>
+                                <td>@CustomRenderingOfProductColumn(order.ProductId, order.ProductName)</td>
+                                <td>@CustomRenderingOfProductColumn(order.RetailerId, order.Retailer)</td>
+                                <td>@order.Address</td>
+                                <td>@order.City</td>
+                                <td>@order.State</td>
+                                <td>@order.PointsUsed</td>
+                                <td>@order.Quantity</td>
+                                <td>@order.OrderStatus</td>
+                                <td>
+                                    @CustomRenderingOfActionColumn(order.Id,order.RetailerId)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+@*****END*******@
+
+@*<div class="col-lg-12" style="margin-left: 5px;" id="responseContainer">
+        @if (Model.OrderList == null || Model.OrderList == null || Model.OrderList.Count == 0)
+        {
+            <div>No record Found</div>
+        }
+        else
+        {
+            /**filters  - Start**/
+            <form data-parsley-validate class="validateForm form-horizontal">
+                <div class="form-group" style="display:inline-block;">
+                    <label>Filter Type</label>
+                    @Html.DropDownListFor(m => m.FilterDetail.SelectedFilterName, new SelectList(Model.FilterDetail.FilterName), new { @required = "0", id = "filterList", name = "filters", @class = "form-control" })
+                </div>
+                <div class="form-group" style="display:inline-block; margin-left:6%">
+                    <label>Filter Value</label>
+                    @Html.TextBoxFor(m => m.FilterDetail.FilterValue, new { @id = "filterValue", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
+                </div>
+
+                <button id="searchButton" data-view="Order" type="button" class="search-button-style btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light">Search</button>
+            </form>
+            /**filters - End**/
+
+            <button id="export" class="btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light" style="float: right;  width: 10% !important;  margin: 0px !important;">Export</button>
+
+            @Html.Grid(Model.OrderList).Columns(columns =>
+       {
+           columns.Add(c => c.Id).Encoded(false).Sanitized(false).Titled("Id").Filterable(true);
+           columns.Add(c => c.OrderNo).Encoded(false).Sanitized(false).Titled("OrderNo").Filterable(true);
+           columns.Add(c => c.DateString).Encoded(false).Sanitized(false).Titled("Order Date").Filterable(true);
+           columns.Add().Encoded(false).Titled("Product").Sanitized(false).RenderValueAs(o => CustomRenderingOfProductColumn(o.ProductId, o.ProductName));
+           columns.Add().Encoded(false).Titled("Retailer").Sanitized(false).RenderValueAs(o => CustomRenderingOfProductColumn(o.RetailerId, o.Retailer));
+           columns.Add(c => c.PointsUsed).Encoded(false).Sanitized(false).Titled("Points Used").Filterable(true);
+           columns.Add(c => c.Address).Encoded(false).Sanitized(false).Titled("Address").Filterable(true);
+           columns.Add(c => c.Quantity).Encoded(false).Sanitized(false).Titled("Quantity").Filterable(true);
+           columns.Add(c => c.OrderStatus).Encoded(false).Sanitized(false).Titled("OrderStatus").Filterable(true);
+           columns.Add().Encoded(false).Titled("Action").Sanitized(false).RenderValueAs(o => CustomRenderingOfActionColumn(o.Id));
+       }).WithPaging(15).Sortable(true)
+        }
+
+        <div id="error">@Model.Error</div>
+    </div>*@
+
+<script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+@*<script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>*@
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+
+<script src="~/Scripts/Project/dashboard.js"></script>
+<script src="~/Scripts/jquery.table2excel.min.js"></script>
+
+<script>
+    var jq = $.noConflict();
+    jq(".preloader").hide();
+    jq(document).ready(function () {
+        if (jq("#export").length > 0) {
+            jq("#export").unbind();
+            jq("#export").click(function () {
+                jq("#dataTable").unbind();
+                var dateToday = new Date();
+                jq("#dataTable").table2excel({
+                    exclude: ".noExl",
+                    name: "Excel Document Name",
+                    filename: "Order-" + dateToday,
+                    fileext: ".xls",
+                    exclude_img: true,
+                    exclude_links: true,
+                    exclude_inputs: true
+                });
+            });
+        }
+    });
+
+    jq("div[name=updateStatus]").click(function () {
+        jq("#orderDialog").dialog({
+            dialogClass: "noclose"
+        });
+        jq("#errorDetail").html("");
+        jq("#OrderDetail_Id").val("");
+        var editId = jq(this).attr("data-id");
+        jq("#OrderDetail_Id").val(editId);
+
+        jq("#OrderDetail_RetailerId").val("");
+        var editId = jq(this).attr("data-retailer-id");
+        jq("#OrderDetail_RetailerId").val(editId);
+        
+    });
+</script>
+
+

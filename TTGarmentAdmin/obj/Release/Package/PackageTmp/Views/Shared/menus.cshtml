@@ -1,0 +1,125 @@
+﻿@using TTGarmentAdmin.Properties
+
+<style>
+    #exampleAccordion > .nav-item {
+        margin-top: -5px;
+        margin-bottom: -5px;
+    }
+</style>
+@*/******New code ******/*@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="@Url.Action("Index", "Dashboard")">Dashboard</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            @***1***@
+            @*<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="@Url.Action("Index", "Dashboard")">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>*@
+            @***1***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+                <a class="nav-link" href="@Url.Action("GetRegisteredRetailer", "Dashboard")">
+                    <i class="fa fa-fw fa-area-chart"></i>
+                    <span class="nav-link-text">@Resources.RegisteredRetailer</span>
+                </a>
+            </li>
+            @***2***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+                <a class="nav-link" href="@Url.Action("GetRetailerPointsLedgerView", "Dashboard")">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">@Resources.PointsLedger</span>
+                </a>
+            </li>
+            @***3***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetProductView", "Dashboard")">
+                    <i class="fa fa-fw fa-product-hunt"></i>
+                    <span class="nav-link-text">@Resources.ProductManager</span>
+                </a>
+            </li>
+            @***4***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetPromotionView", "Dashboard")">
+                    <i class="fa fa-fw fa-american-sign-language-interpreting"></i>
+                    <span class="nav-link-text">@Resources.PromotionView</span>
+                </a>
+            </li>
+
+            @***6***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetMediaCategoryView", "Dashboard")">
+                    <i class="fa fa-fw fa-image"></i>
+                    <span class="nav-link-text">@Resources.MediaCategoryMaster</span>
+                </a>
+            </li>
+            @***7***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetGallaryView", "Dashboard")">
+                    <i class="fa fa-fw fa-camera"></i>
+                    <span class="nav-link-text">@Resources.GallaryManager</span>
+                </a>
+            </li>
+            @***8***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetOrders", "Dashboard")">
+                    <i class="fa fa-fw fa-book"></i>
+                    <span class="nav-link-text">@Resources.OrderMaster</span>
+                </a>
+            </li>
+            @***9***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetNotificationListView", "Dashboard")">
+                    <i class="fa fa-fw fa-bell"></i>
+                    <span class="nav-link-text">@Resources.NotificationMaster</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetMessageDetailListView", "Dashboard")">
+                    <i class="fa fa-fw fa-bell"></i>
+                    <span class="nav-link-text">Messages Master</span>
+                </a>
+            </li>
+            @***10***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetFestivePointListView", "Dashboard")">
+                    <i class="fa fa-fw fa-address-card"></i>
+                    <span class="nav-link-text">Festival Points Master</span>
+                </a>
+            </li>
+            @***11***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetBannerListView", "Dashboard")">
+                    <i class="fa fa-fw fa-address-card"></i>
+                    <span class="nav-link-text">@Resources.BannerMaster</span>
+                </a>
+            </li>
+            @***12***@
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="@Url.Action("GetAppVersionListView", "Dashboard")">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">Manage Application Version</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+@*/******new code ******/*@

@@ -1,0 +1,86 @@
+﻿@model TTGarmentAdmin.Models.DashboardModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+
+<style>
+    #progress_bar {
+        margin: 10px 0;
+        padding: 3px;
+        border: 1px solid #000;
+        font-size: 14px;
+        clear: both;
+        opacity: 0;
+        -moz-transition: opacity 1s linear;
+        -o-transition: opacity 1s linear;
+        -webkit-transition: opacity 1s linear;
+    }
+
+        #progress_bar.loading {
+            opacity: 1.0;
+        }
+
+        #progress_bar .percent {
+            background-color: #99ccff;
+            height: auto;
+            width: 0;
+        }
+
+    .form-style {
+        width: 30%;
+        margin-left: 34%;
+    }
+</style>
+
+<body>
+    <div class="row">
+        <form data-parsley-validate class="validateForm form-horizontal form-style" id="promotionForm" onsubmit="return SavePromotionImagePath();">
+            @Html.HiddenFor(m => m.PromotionDetail.Id, new { name = "Id" })
+
+            <div class="form-group">
+                <label>Promotion Heading</label>
+                @Html.TextBoxFor(m => m.PromotionDetail.Heading, new { @id = "Heading", @required = "required", @class = "form-control", @placeholder = "Heading" })
+            </div>
+            <div class="form-group">
+                <label>Promotional Text</label>
+                @Html.TextBoxFor(m => m.PromotionDetail.HeadingText, new { @id = "HeadingText", @required = "required", @class = "form-control", @placeholder = "Promotional Text" })
+            </div>
+            <div class="form-group">
+                <label>Total Promotional Uploaded Image Count</label>
+                @Html.TextBoxFor(m => m.PromotionDetail.ImageCount, new { @type = "number", @id = "ImageCount", @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>No. Of Entries Allowed</label>
+                @Html.TextBoxFor(m => m.PromotionDetail.TotalEntries, new { @type = "number", @id = "entries", @required = "required", @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Points on Approval</label>
+                @Html.TextBoxFor(m => m.PromotionDetail.Points, new { @type = "number", @id = "approvalPoints", @required = "required", @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <input type="file" id="files" name="file" />
+                @*<div id="progress_bar"><div class="percent">0%</div></div>*@
+                <span>Max size limit 20 MB</span>
+            </div>
+            @Html.HiddenFor(m => m.PromotionDetail.Image, new { @id = "imageFilePath" })
+            <br />
+            <label id="error" style="color:red;"></label>
+            <br />
+            <button class="btn btn-large btn-primary" type="submit">Save</button>
+        </form>
+
+    </div>
+</body>
+</html>
+
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/Project/dashboard.js"></script>
+</head>

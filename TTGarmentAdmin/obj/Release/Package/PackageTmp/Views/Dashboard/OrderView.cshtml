@@ -1,0 +1,70 @@
+﻿@model TTGarmentAdmin.Models.DashboardModel
+@using GridMvc.Html
+@{
+    ViewBag.Title = "Order view";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<link href="@Url.Content("~/Content/Gridmvc.css")" r@*el="stylesheet" />*@
+@*<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />*@
+
+<style>
+    .box-style {
+        width: 25% !important;
+        display: inline-block !important;
+        height: 38px !important;
+        margin: 0px 29px !important;
+    }
+
+    table.grid-table {
+        font-size: 11px;
+    }
+
+    .uploadBox {
+        height: 59px;
+        vertical-align: middle;
+        background: lightgoldenrodyellow;
+        padding-top: 1.4%;
+        margin-left: 0px;
+    }
+</style>
+
+<h3>Order Master</h3>
+<div id="orderDialog" title="Status" style="display:none;">
+    <form data-parsley-validate class="validateForm form-horizontal" style="text-align: center;" id="orderStatus" onsubmit="return UpdateOrderStatus();">
+        @*<span id="orderId" style="display:none;"></span>*@
+        @Html.HiddenFor(m => m.OrderDetail.Id, new { name = "Id" })
+        @Html.HiddenFor(m => m.OrderDetail.RetailerId, new { name = "RetailerId" })
+        @Html.DropDownListFor(m => m.OrderDetail.OrderStatus, new SelectList(Model.StatusList), new { @required = "0", id = "statusList", name = "status", @class = "form-control" })
+        <p id="errorDetail"></p>
+        <button type="submit" Id="UpdateStatusButton">Update</button>
+    </form>
+</div>
+<div class="row">
+    <div class="col-lg-12" style="margin-left: 5px;" id="responseContainer">
+
+        <div id="resultContainer">
+            @Html.Partial("~/Views/Dashboard/_orderPartialView.cshtml", Model)
+        </div>
+
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+@*<script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>*@
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+
+<script src="~/Scripts/Project/dashboard.js"></script>
+<script src="~/Scripts/jquery.table2excel.min.js"></script>
+
+<script>
+    var jq = $.noConflict();
+    jq(".preloader").hide();
+    jq(document).ready(function () {
+
+    });
+</script>
+
+

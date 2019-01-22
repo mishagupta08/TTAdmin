@@ -1,0 +1,127 @@
+﻿@model TTGarmentAdmin.Models.DashboardModel
+@using GridMvc.Html
+@{
+    ViewBag.Title = "_festivePointListPartialView";
+    Layout = null;
+}
+
+@*<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />*@
+
+<style>
+    .box-style {
+        width: 25% !important;
+        display: inline-block !important;
+        height: 38px !important;
+        margin: 0px 29px !important;
+    }
+
+    table.grid-table {
+        font-size: 11px;
+    }
+</style>
+
+@helper CustomRenderingOfStatusColumn(string Id, bool? status)
+{
+var statusValue = "";
+if (status == true)
+{
+    statusValue = "DeActivate";
+}
+else
+{
+    statusValue = "Activate";
+}
+
+    <span id="@Id" name="festivePointStatus" style="color:blue; text-decoration-line:underline; cursor:pointer; ">@statusValue</span>
+}
+
+@helper CustomRenderingOfActionColumn(string Id)
+{
+    <a href="@Url.Action("GetAddFestivePointView", "Dashboard", new { Id = Id })"><img src="~/images/edit.png" height="20" name="editMember" /></a>
+}
+
+@****** New code for Notificaton ******@
+<div class="card mb-3" id="responseContainer">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Points List
+        @*<button id="export" class="btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light" style="float: right;  width: 10% !important;  margin: 0px !important;">Export</button>*@
+        <div style="display:none;">@Html.Raw(Model.TableString)</div>
+    </div>
+    <div class="card-body">
+        @if (Model.FestivePointList == null || Model.FestivePointList == null || Model.FestivePointList.Count == 0)
+        {
+            <div>No record Found</div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+                            <th>From Point</th>
+                            <th>To Point</th>
+                            <th>Added Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var point in Model.FestivePointList)
+                        {
+                            <tr>
+                                <td>@point.Id</td>
+                                <td>@point.FromDate</td>
+                                <td>@point.ToDate</td>
+                                <td>@point.FromPoint</td>
+                                <td>@point.ToPoint</td>
+                                <td>@point.AddedDate</td>
+                                <td>@CustomRenderingOfStatusColumn(point.Id, point.IsActive)</td>
+                                <td>@CustomRenderingOfActionColumn(point.Id)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+@*****END*******@
+
+<script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+
+<script src="~/Scripts/Project/dashboard.js"></script>
+<script src="~/Scripts/jquery.table2excel.min.js"></script>
+
+<script>
+    var jq = $.noConflict();
+    jq(".preloader").hide();
+    jq(document).ready(function () {
+        if (jq("#export").length > 0) {
+            jq("#export").unbind();
+            jq("#export").click(function () {
+                jq(".grid-table").unbind();
+                var dateToday = new Date();
+                jq(".grid-table").table2excel({
+                    exclude: ".noExl",
+                    name: "Excel Document Name",
+                    filename: "Festivepoints-" + dateToday,
+                    fileext: ".xls",
+                    exclude_img: true,
+                    exclude_links: true,
+                    exclude_inputs: true
+                });
+            });
+        }
+    });
+</script>
+
+
