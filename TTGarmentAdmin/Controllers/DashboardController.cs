@@ -122,7 +122,7 @@ namespace TTGarmentAdmin.Controllers
             return RedirectToAction("Index", "Login");
         }
 
-        public async Task<ActionResult> GetOrders(string filterType, string filterValue)
+        public async Task<ActionResult> GetOrders(string filterType, string filterValue, string fromDate, string toDate)
         {
             this.repository = new Repository();
             this.model = new DashboardModel();
@@ -132,7 +132,8 @@ namespace TTGarmentAdmin.Controllers
             this.model.FilterDetail.AssignOrderListFilter();
             this.model.FilterDetail.SelectedFilterName = filterType;
             this.model.FilterDetail.FilterValue = filterValue;
-
+            this.model.FilterDetail.FromDate = fromDate;
+            this.model.FilterDetail.ToDate = toDate;
             if (!string.IsNullOrEmpty(filterValue))
             {
                 filterValue = filterValue.Trim().ToLower();
@@ -146,7 +147,25 @@ namespace TTGarmentAdmin.Controllers
                 }
                 if (filterType == "Date")
                 {
-                    this.model.OrderList = this.model.OrderList.Where(r => (!string.IsNullOrEmpty(r.OrderNo) && r.OrderNo.ToLower().Contains(filterValue))).ToList();
+                    if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
+                    {
+                        DateTime d1 = DateTime.ParseExact(fromDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
+                        DateTime d2 = DateTime.ParseExact(toDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
+
+                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date >= d1.Date && r.Date.Value.Date <= d2.Date).ToList();
+                    }
+
+                    if (!string.IsNullOrEmpty(fromDate))
+                    {
+                        DateTime d1 = DateTime.ParseExact(fromDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);                        
+                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date >= d1.Date).ToList();
+                    }
+
+                    if (!string.IsNullOrEmpty(toDate))
+                    {
+                        DateTime d2 = DateTime.ParseExact(toDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
+                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date <= d2.Date).ToList();
+                    }
                 }
                 if (filterType == "Order No")
                 {

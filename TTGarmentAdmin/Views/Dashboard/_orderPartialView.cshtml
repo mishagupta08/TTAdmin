@@ -60,7 +60,16 @@
                 <label>Filter Value</label>
                 @Html.TextBoxFor(m => m.FilterDetail.FilterValue, new { @id = "filterValue", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
             </div>
+            <br />
+            <div class="form-group" style="display:inline-block;">
+                <label>From Date</label>
+                @Html.TextBoxFor(m => m.FilterDetail.FromDate, new { @id = "fromDate", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
+            </div>
 
+            <div class="form-group" style="display:inline-block; margin-left:6%">
+                <label>To Date</label>
+                @Html.TextBoxFor(m => m.FilterDetail.ToDate, new { @id = "toDate", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
+            </div>
             <button id="searchButton" data-view="Order" type="button" class="search-button-style btn btn-info btn-sm left btn-block text-uppercase waves-effect waves-light">Search</button>
         </form>
         @*/**filters - End**/*@
@@ -173,6 +182,12 @@
 <script>
     var jq = $.noConflict();
     jq(".preloader").hide();
+
+    jq('#fromDate').datepicker({
+    });
+    jq('#toDate').datepicker({
+    });
+
     jq(document).ready(function () {
         if (jq("#export").length > 0) {
             jq("#export").unbind();

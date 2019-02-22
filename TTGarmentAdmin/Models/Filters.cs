@@ -75,6 +75,7 @@ namespace TTGarmentAdmin.Models
             FilterName.Add("Retailer Name");
             FilterName.Add("Address");
             FilterName.Add("Order Status");
+            FilterName.Add("Date");
         }
 
         public void AssignNotificationFilter()

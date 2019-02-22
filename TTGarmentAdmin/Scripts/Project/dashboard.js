@@ -191,7 +191,9 @@ function SearchDetail(viewName) {
         uri = '/Dashboard/GetGallaryView?filterType=' + id + '&filterValue=' + value;
     }
     else if (viewName == "Order") {
-        uri = '/Dashboard/GetOrders?filterType=' + id + '&filterValue=' + value;
+        var fromDate = $("#fromDate").val();
+        var toDate = $("#toDate").val();
+        uri = '/Dashboard/GetOrders?filterType=' + id + '&filterValue=' + value + '&fromDate=' + fromDate + '&toDate=' + toDate;        
     }
     else if (viewName == "Notification") {
         uri = '/Dashboard/GetNotificationListView?filterType=' + id + '&filterValue=' + value;
