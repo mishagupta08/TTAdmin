@@ -28,5 +28,7 @@ namespace TTGarmentAdmin.Models
         public int ConfirmCount { get; set; }
 
         public int DeliveredOrderCount { get; set; }
+
+        public int OnHoldCount { get; set; }
     }
 }

@@ -14,9 +14,9 @@ namespace TTGarmentAdmin
 {
     public class Repository
     {
-        //private string ApiUrl = "http://ttapi.bisplindia.in/api/Home/";
+        private string ApiUrl = "http://ttapi.bisplindia.in/api/Home/";
 
-        private string ApiUrl = "http://localhost:59515/api/Home/";
+        //private string ApiUrl = "http://localhost:59515/api/Home/";
 
         private string LoginAdminAction = "LoginAdminUser";
 

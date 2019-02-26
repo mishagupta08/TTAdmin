@@ -155,13 +155,13 @@ namespace TTGarmentAdmin.Controllers
                         this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date >= d1.Date && r.Date.Value.Date <= d2.Date).ToList();
                     }
 
-                    if (!string.IsNullOrEmpty(fromDate))
+                    else if (!string.IsNullOrEmpty(fromDate))
                     {
                         DateTime d1 = DateTime.ParseExact(fromDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);                        
                         this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date >= d1.Date).ToList();
                     }
 
-                    if (!string.IsNullOrEmpty(toDate))
+                    else if (!string.IsNullOrEmpty(toDate))
                     {
                         DateTime d2 = DateTime.ParseExact(toDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
                         this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date <= d2.Date).ToList();

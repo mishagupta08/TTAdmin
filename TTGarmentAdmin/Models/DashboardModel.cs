@@ -85,6 +85,7 @@ namespace TTGarmentAdmin.Models
             this.StatusList.Add(Status.Confirm.ToString());
             this.StatusList.Add(Status.Delivered.ToString());
             this.StatusList.Add(Status.Rejected.ToString());
+            this.StatusList.Add(Status.OnHold.ToString());
         }
     }
 }

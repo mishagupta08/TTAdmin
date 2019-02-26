@@ -99,11 +99,11 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ["Pending : " + $("#PendingOrderCount").val(), "Delivered : " + $("#DeliveredOrderCount").val(), "Reject : " + $("#RejectOrderCount").val(), "Confirm : " + $("#ConfirmCount").val()],
+        labels: ["Pending : " + $("#PendingOrderCount").val(), "Delivered : " + $("#DeliveredOrderCount").val(), "Reject : " + $("#RejectOrderCount").val(), "Confirm : " + $("#ConfirmCount").val(), "On Hold : " + $("#OnHoldCount").val()],
         datasets: [{
-            data: [$("#PendingOrderCount").val(), $("#DeliveredOrderCount").val(), $("#RejectOrderCount").val(), $("#ConfirmCount").val()],
-            //data: [12.21, 15.58, 11.25, 8.32],
-            backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+            data: [$("#PendingOrderCount").val(), $("#DeliveredOrderCount").val(), $("#RejectOrderCount").val(), $("#ConfirmCount").val(), $("#OnHoldCount").val()],
+            //data: [12.21, 5.58, 11.25, 8.32,10.00],
+            backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#332255'],
         }],
     },
 });
