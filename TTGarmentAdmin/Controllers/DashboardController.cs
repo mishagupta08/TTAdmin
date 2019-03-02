@@ -145,28 +145,10 @@ namespace TTGarmentAdmin.Controllers
                 {
                     this.model.OrderList = this.model.OrderList.Where(r => r.Id.ToLower().Contains(filterValue)).ToList();
                 }
-                if (filterType == "Date")
-                {
-                    if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
-                    {
-                        DateTime d1 = DateTime.ParseExact(fromDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
-                        DateTime d2 = DateTime.ParseExact(toDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
-
-                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date >= d1.Date && r.Date.Value.Date <= d2.Date).ToList();
-                    }
-
-                    else if (!string.IsNullOrEmpty(fromDate))
-                    {
-                        DateTime d1 = DateTime.ParseExact(fromDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);                        
-                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date >= d1.Date).ToList();
-                    }
-
-                    else if (!string.IsNullOrEmpty(toDate))
-                    {
-                        DateTime d2 = DateTime.ParseExact(toDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
-                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date <= d2.Date).ToList();
-                    }
-                }
+                //if (filterType == "Date")
+                //{
+                    
+                //}
                 if (filterType == "Order No")
                 {
                     this.model.OrderList = this.model.OrderList.Where(r => (!string.IsNullOrEmpty(r.OrderNo) && r.OrderNo.ToLower().Contains(filterValue))).ToList();
@@ -193,8 +175,52 @@ namespace TTGarmentAdmin.Controllers
                 }
                 if (filterType == "Order Status")
                 {
-                    this.model.OrderList = this.model.OrderList.Where(r => (!string.IsNullOrEmpty(r.OrderStatus) && r.OrderStatus.ToLower().Contains(filterValue))).ToList();
+                    this.model.OrderList = this.model.OrderList.Where(r => (!string.IsNullOrEmpty(r.OrderStatus) && r.OrderStatus.ToLower().Contains(filterValue.ToLower()))).ToList();
                 }
+
+
+                if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
+                {
+                    try
+                    {
+                        DateTime d1 = DateTime.ParseExact(fromDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
+                        DateTime d2 = DateTime.ParseExact(toDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
+
+                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date >= d1.Date && r.Date.Value.Date <= d2.Date).ToList();
+                    }
+                    catch (Exception ex)
+                    {
+                        this.model.OrderList = null;
+                    }
+                   
+                }
+
+                else if (!string.IsNullOrEmpty(fromDate))
+                {
+                    try
+                    {
+                        DateTime d1 = DateTime.ParseExact(fromDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
+                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date >= d1.Date).ToList();
+                    }
+                    catch (Exception ex)
+                    {
+                        this.model.OrderList = null;
+                    }
+                }
+
+                else if (!string.IsNullOrEmpty(toDate))
+                {
+                   try
+                   {
+                        DateTime d2 = DateTime.ParseExact(toDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
+                        this.model.OrderList = this.model.OrderList.Where(r => r.Date.Value.Date <= d2.Date).ToList();
+                    }
+                    catch (Exception ex)
+                    {
+                        this.model.OrderList = null;
+                    }
+                }
+
             }
             this.model.OrderDetail = new R_OrderMaster();
             this.model.AssignStatusList();
