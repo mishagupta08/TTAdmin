@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace TTGarmentAdmin.Models
 {
@@ -78,6 +79,8 @@ namespace TTGarmentAdmin.Models
 
         public string TableString { get; set; }
 
+        public IList<SelectListItem> BlockOption { get; set; }
+
         public void AssignStatusList()
         {
             this.StatusList = new List<string>();
@@ -86,6 +89,13 @@ namespace TTGarmentAdmin.Models
             this.StatusList.Add(Status.Delivered.ToString());
             this.StatusList.Add(Status.Rejected.ToString());
             this.StatusList.Add(Status.OnHold.ToString());
+        }
+
+        public void AssignBlockOptionList()
+        {
+            this.BlockOption = new List<SelectListItem>();
+            this.BlockOption.Add(new SelectListItem {Text="Blocked",Value="Y"});
+            this.BlockOption.Add(new SelectListItem { Text = "Active", Value = "N" });
         }
     }
 }

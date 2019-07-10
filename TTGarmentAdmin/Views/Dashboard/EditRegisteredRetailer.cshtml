@@ -68,7 +68,7 @@
             </div>
             <div class="form-group">
                 <label>Email</label>
-                @Html.TextBoxFor(m => m.RetailerDetail.Email, new { @id = "Email", @required = "required", @class = "form-control", @placeholder = "Email" })
+                @Html.TextBoxFor(m => m.RetailerDetail.Email, new { @id = "Email", @class = "form-control", @placeholder = "Email" })
             </div>
             <div class="form-group">
                 <label>ShopGpsX</label>
@@ -86,6 +86,11 @@
             <div class="form-group">
                 <label>AddressGpsY</label>
                 @Html.TextBoxFor(m => m.RetailerDetail.AddressGpsY, new { @id = "AddressGpsY", @required = "required", @class = "form-control", @placeholder = "AddressGpsY" })
+            </div>
+
+            <div class="form-group">
+                <label>Block Retailer</label>
+                @Html.DropDownListFor(m => m.RetailerDetail.IsBlock, new SelectList(Model.BlockOption, "Value", "Text"), new { @id = "IsBlock", @required = "required", @class = "form-control", @placeholder = "IsBlock" })
             </div>
 
             <button class="btn btn-large btn-primary" type="submit">Save</button>

@@ -228,7 +228,8 @@ else
                                 <td>@Html.Raw(retailer.GPSDetail)</td>
                                 <td>@CustomRenderingOfLocationColumn(retailer.LocationLink, retailer.DeviceLocationLink)</td>
                                 <td>@retailer.RegistrationDate</td>
-                                <td>@retailer.IsActive</td>
+                                <td>@retailer.IsActive</td> 
+                                <td>@retailer.IsBlock</td>                                
                                 <td>
                                     @CustomRenderingOfActionColumn(retailer.ID)
                                 </td>

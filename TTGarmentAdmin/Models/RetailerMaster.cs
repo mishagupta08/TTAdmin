@@ -37,6 +37,7 @@ namespace TTGarmentAdmin.Models
         public decimal Distance { get; set; }
         public decimal Points { get; set; }
         public Nullable<bool> IsApproved { get; set; }
+        public string IsBlock { get; set; }
         public Nullable<System.DateTime> RegistrationDate { get; set; }
     }
 }

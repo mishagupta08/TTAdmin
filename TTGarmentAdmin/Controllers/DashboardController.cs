@@ -177,6 +177,10 @@ namespace TTGarmentAdmin.Controllers
                 {
                     this.model.OrderList = this.model.OrderList.Where(r => (!string.IsNullOrEmpty(r.OrderStatus) && r.OrderStatus.ToLower().Contains(filterValue.ToLower()))).ToList();
                 }
+                if (filterType == "State")
+                {
+                    this.model.OrderList = this.model.OrderList.Where(r => (!string.IsNullOrEmpty(r.State) && r.State.ToLower().Contains(filterValue.ToLower()))).ToList();
+                }
 
 
                 if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
@@ -1064,6 +1068,7 @@ namespace TTGarmentAdmin.Controllers
             if (this.model.RetailerDetail != null)
             {
                 await AssignStateCityList();
+                this.model.AssignBlockOptionList();
             }
 
             //this.model.DistributerCityList = await this.repository.GetDistributerCityList();
