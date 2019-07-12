@@ -607,6 +607,7 @@ function UpdateOrderStatus() {
         url: '/Dashboard/UpdateStatus',
         type: 'Post',
         datatype: 'Json',
+        async:false,
         data: data
     }).done(function (result) {
         if (result.indexOf("Error : ") >= 0) {
