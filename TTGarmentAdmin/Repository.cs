@@ -112,6 +112,8 @@ namespace TTGarmentAdmin
 
         private string ManageAppVersionAction = "ManageAppVersion/";
 
+        private string ManageSettingAction = "ManageSetting/";
+
         public async Task<AdminMaster> AdminLogin(LoginViewModel loginModel)
         {
             var loginDetail = "{\"Username\":\"UsernameValue\",\"Password\":\"PasswordValue\"}";
@@ -342,6 +344,20 @@ namespace TTGarmentAdmin
         {
             string parameter = JsonConvert.SerializeObject(retailerDetail);
             var result = await CallPostFunction(parameter, ManageRetailerEditAction);
+            if (result == null)
+            {
+                return null;
+            }
+            else
+            {
+                return result.ResponseValue;
+            }
+        }
+
+        public async Task<string> SaveSettings(R_Setting settings)
+        {
+            string parameter = JsonConvert.SerializeObject(settings);
+            var result = await CallPostFunction(parameter, ManageSettingAction + "Edit");
             if (result == null)
             {
                 return null;
@@ -969,6 +985,21 @@ namespace TTGarmentAdmin
             else
             {
                 var bannerList = JsonConvert.DeserializeObject<List<R_AppVersion>>(result.ResponseValue);
+                return bannerList;
+            }
+        }
+
+        
+            public async Task<R_Setting> GetSettingDetail()
+        {
+            var result = await CallPostFunction(string.Empty, ManageSettingAction + "List");
+            if (result == null || !result.Status)
+            {
+                return null;
+            }
+            else
+            {
+                var bannerList = JsonConvert.DeserializeObject<R_Setting>(result.ResponseValue);
                 return bannerList;
             }
         }

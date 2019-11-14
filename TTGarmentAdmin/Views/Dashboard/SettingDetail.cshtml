@@ -1,0 +1,39 @@
+﻿@model TTGarmentAdmin.Models.DashboardModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/Project/dashboard.js"></script>
+</head>
+
+<body>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Company Settings</a>
+        </li>
+        @*<li class="breadcrumb-item active"></li>*@
+    </ol>
+    <div class="row">
+        <form data-parsley-validate class="validateForm form-horizontal col-lg-12" id="SettingIdForm" onsubmit="return SaveSettingDetail();">
+            @Html.HiddenFor(m => m.SettingDetail.Id, new { name = "ID" })
+           
+
+            <div class="form-group">
+                <label>Helpline No</label>
+                @Html.TextBoxFor(m => m.SettingDetail.HelplineNo, new { @id = "HelplineNo", @required = "required", @class = "form-control col-lg-4", @placeholder = "1111111111" })
+            </div>
+            
+
+            <button class="btn btn-large btn-primary" type="submit">Update</button>
+        </form>
+        <label id="error" style="color:red;"></label>
+    </div>
+</body>
+</html>

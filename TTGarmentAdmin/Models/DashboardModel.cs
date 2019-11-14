@@ -81,6 +81,8 @@ namespace TTGarmentAdmin.Models
 
         public IList<SelectListItem> BlockOption { get; set; }
 
+        public R_Setting SettingDetail { get; set; }
+
         public void AssignStatusList()
         {
             this.StatusList = new List<string>();

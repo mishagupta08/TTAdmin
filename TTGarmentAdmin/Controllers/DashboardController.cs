@@ -1431,5 +1431,42 @@ namespace TTGarmentAdmin.Controllers
                 return Json(res.ResponseValue);
             }
         }
+
+        public async Task<ActionResult> GetCompanySettings()
+        {
+            this.repository = new Repository();
+            this.model = new DashboardModel();
+            this.model.SettingDetail = new R_Setting();
+            this.model.SettingDetail = await this.repository.GetSettingDetail();
+            return View("SettingDetail", this.model);
+        }
+
+        
+            public async Task<ActionResult> SaveSettings(DashboardModel modelDetail)
+        {
+            try
+            {
+                if (modelDetail == null)
+                {
+                    return Json("Please Send Complate Detail.");
+                }
+
+                this.repository = new Repository();
+                var result = await this.repository.SaveSettings(modelDetail.SettingDetail);
+                if (result == null)
+                {
+                    return Json("Something went wrong. Please try again later.");
+                }
+
+                return Json(result);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.InnerException);
+            }
+
+            //return Json(string.Empty);
+        }
+
     }
 }

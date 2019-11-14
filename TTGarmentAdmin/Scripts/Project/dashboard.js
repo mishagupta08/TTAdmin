@@ -161,6 +161,27 @@ function SaveRetailerDetail() {
     return false;
 }
 
+function SaveSettingDetail() {
+    $("#error").html("");
+    var loginDetail = $('#SettingIdForm').serialize();
+    $(".preloader").show();
+    $.ajax({
+        url: 'SaveSettings',
+        type: 'Post',
+        datatype: 'Json',
+        data: loginDetail
+    }).done(function (result) {
+        $("#error").html(result);
+        $(".preloader").hide();
+    }).fail(function (error) {
+        $("#error").html(error.statusText);
+        $(".preloader").hide();
+    });
+
+    return false;
+}
+
+
 function SearchDetail(viewName) {
     // var detail = $('#retailerSearchForm').serialize();
     $(".preloader").show();

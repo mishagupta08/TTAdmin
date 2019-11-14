@@ -1436,6 +1436,7 @@
     <Compile Include="Models\R_ProductMaster.cs" />
     <Compile Include="Models\R_Promotion.cs" />
     <Compile Include="Models\R_PromotionEntries.cs" />
+    <Compile Include="Models\R_Setting.cs" />
     <Compile Include="Models\R_StateMaster.cs" />
     <Compile Include="Models\R_UploadedMedia.cs" />
     <Compile Include="Models\Status.cs" />
@@ -1539,6 +1540,7 @@
     <Content Include="Views\Dashboard\AddMessageView.cshtml" />
     <Content Include="Views\Dashboard\_messageDetailListView.cshtml" />
     <Content Include="Views\Dashboard\MessagesListView.cshtml" />
+    <Content Include="Views\Dashboard\SettingDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
