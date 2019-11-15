@@ -16,7 +16,7 @@
 <body>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="#">Company Settings</a>
+            <a href="#">Master Settings</a>
         </li>
         @*<li class="breadcrumb-item active"></li>*@
     </ol>
@@ -25,9 +25,12 @@
             @Html.HiddenFor(m => m.SettingDetail.Id, new { name = "ID" })
            
 
-            <div class="form-group">
+            <div class="col-lg-4 form-group">
                 <label>Helpline No</label>
-                @Html.TextBoxFor(m => m.SettingDetail.HelplineNo, new { @id = "HelplineNo", @required = "required", @class = "form-control col-lg-4", @placeholder = "1111111111" })
+                @Html.TextBoxFor(m => m.SettingDetail.HelplineNo, new { @id = "HelplineNo", @required = "required", @class = "form-control", @placeholder = "Helpline No." })
+            </div>
+            <div class="col-lg-8">
+                &nbsp;
             </div>
             
 
