@@ -39,5 +39,6 @@ namespace TTGarmentAdmin.Models
         public Nullable<bool> IsApproved { get; set; }
         public string IsBlock { get; set; }
         public Nullable<System.DateTime> RegistrationDate { get; set; }
+        public Nullable<decimal> TotalEarned { get; set; }
     }
 }

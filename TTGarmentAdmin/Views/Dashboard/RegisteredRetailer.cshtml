@@ -205,7 +205,8 @@ else
                             <th>Address</th>
                             <th>Credential Detail</th>
                             <th>Personal Detail</th>
-                            <th>Points</th>
+                            <th>Current Points</th>
+                            <th>Total Earned Points</th>
                             <th>Gps Detail</th>
                             <th>Location</th>
                             <th>Registration Date</th>
@@ -225,6 +226,7 @@ else
                                 <td>@Html.Raw(retailer.CredentialDetail)</td>
                                 <td>@Html.Raw(retailer.PersonalDetail)</td>
                                 <td>@retailer.Points</td>
+                                <td>@retailer.TotalEarned</td>
                                 <td>@Html.Raw(retailer.GPSDetail)</td>
                                 <td>@CustomRenderingOfLocationColumn(retailer.LocationLink, retailer.DeviceLocationLink)</td>
                                 <td>@retailer.RegistrationDate</td>
