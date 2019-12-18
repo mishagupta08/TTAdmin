@@ -533,11 +533,11 @@ namespace TTGarmentAdmin.Controllers
 
         private void CreateRetailerTableString()
         {
-            this.model.TableString = "<table id=retailerStringTable><thead><tr><th>ID</th><th>FIRM NAME</th><th>DISTRIBUTER NAME</th><th>DISTRIBUTER CITY</th><th>DISTRIBUTER MOBILE</th><th>ADDRESS</th><th>PIN</th><th>USERNAME</th><th>PASSWORD</th><th>EMAIL</th><th>CITY</th><th>STATE</th><th>POINTS</th><th>SHOP GPS</th><th>REGISTRATION GPS</th><th>DISTANCE</th><th>REGISTRATION DATE</th><th>STATUS</th></tr></thead><tbody>";
+            this.model.TableString = "<table id=retailerStringTable><thead><tr><th>ID</th><th>FIRM NAME</th><th>DISTRIBUTER NAME</th><th>DISTRIBUTER CITY</th><th>DISTRIBUTER MOBILE</th><th>ADDRESS</th><th>PIN</th><th>USERNAME</th><th>PASSWORD</th><th>EMAIL</th><th>CITY</th><th>STATE</th><th>POINTS</th><th>TOTAL EARNED POINTS</th><th>SHOP GPS</th><th>REGISTRATION GPS</th><th>DISTANCE</th><th>REGISTRATION DATE</th><th>STATUS</th></tr></thead><tbody>";
             foreach (var retailer in this.model.RetailerList)
             {
                 this.model.TableString += "<tr><td>" + retailer.ID + "</td><td>" + retailer.FirmName + "</td><td>" + retailer.DistributerName + "</td><td>" + retailer.DistributerCity + "</td><td>" + retailer.DistributerMobileNo + "</td>" +
-                    "<td>" + retailer.Address + "</td><td>" + retailer.PinCode + "</td><td>" + retailer.Mobile + "</td><td>" + retailer.Password + "</td><td>" + retailer.Email + "</td><td>" + retailer.CityName + "</td><td>" + retailer.StateName + "</td><td>" + retailer.Points + "</td><td>" + retailer.AddressGpsX + " , " + retailer.AddressGpsY + "</td><td>" + retailer.ShopGpsX + " , " + retailer.ShopGpsY + "</td><td>" + retailer.Distance + "Km</td><td>" + retailer.RegistrationDate + "</td><td id='" + ("data" + retailer.ID) + "'>" + (retailer.IsActive == true ? "True" : "False") + "</td></tr>";
+                    "<td>" + retailer.Address + "</td><td>" + retailer.PinCode + "</td><td>" + retailer.Mobile + "</td><td>" + retailer.Password + "</td><td>" + retailer.Email + "</td><td>" + retailer.CityName + "</td><td>" + retailer.StateName + "</td><td>" + retailer.Points + "</td><td>" + retailer.TotalEarned + "</td><td>" + retailer.AddressGpsX + " , " + retailer.AddressGpsY + "</td><td>" + retailer.ShopGpsX + " , " + retailer.ShopGpsY + "</td><td>" + retailer.Distance + "Km</td><td>" + retailer.RegistrationDate + "</td><td id='" + ("data" + retailer.ID) + "'>" + (retailer.IsActive == true ? "True" : "False") + "</td></tr>";
             }
             this.model.TableString += "</tbody></table>";
         }
