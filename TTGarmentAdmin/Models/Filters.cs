@@ -25,6 +25,7 @@ namespace TTGarmentAdmin.Models
             FilterName.Add("Mobile Number");
             FilterName.Add("City");
             FilterName.Add("State");
+            FilterName.Add("PinCode");
             FilterName.Add("Date");
         }
 
