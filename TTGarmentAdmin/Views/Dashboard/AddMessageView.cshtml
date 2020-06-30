@@ -54,12 +54,12 @@
             <br />
             <div class="form-group">
                 <label>Publish From</label>
-                @Html.TextBoxFor(m => m.MessageDetail.PublishFrom, new { @id = "fromDate", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
+                @Html.TextBoxFor(m => m.MessageDetail.PublishFromDate, new { @id = "fromDate", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
             </div>
             <br />
             <div class="form-group">
                 <label>Publish To</label>
-                @Html.TextBoxFor(m => m.MessageDetail.PublishTo, new { @id = "toDate", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
+                @Html.TextBoxFor(m => m.MessageDetail.PublishToDate, new { @id = "toDate", @required = "required", @class = "form-control", @style = "height: 38px;", @placeholder = "Value" })
             </div>
             <br />
             <div class="form-group">
@@ -87,7 +87,9 @@
     var jq = $.noConflict();
     jq(".preloader").hide();
     jq('#fromDate').datepicker({
+        dateFormat: 'mm/dd/yy' 
     });
     jq('#toDate').datepicker({
+        dateFormat: 'mm/dd/yy'
     });
 </script>

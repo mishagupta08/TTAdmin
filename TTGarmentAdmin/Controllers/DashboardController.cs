@@ -698,8 +698,11 @@ namespace TTGarmentAdmin.Controllers
             {
                 foreach (var msg in this.model.MessagesList)
                 {
-                    msg.PublishTo = Convert.ToDateTime(msg.PublishToDate);
-                    msg.MessagePublishDate = Convert.ToDateTime(msg.DateString);
+                    if(!string.IsNullOrEmpty(msg.PublishToDate))
+                        msg.PublishTo = Convert.ToDateTime(msg.PublishToDate);
+
+                    if (!string.IsNullOrEmpty(msg.DateString))
+                        msg.MessagePublishDate = Convert.ToDateTime(msg.DateString);
                 }
             }
             return View("MessagesListView", this.model);
@@ -729,6 +732,8 @@ namespace TTGarmentAdmin.Controllers
             }
 
             this.repository = new Repository();
+            messageModel.MessageDetail.PublishFrom =  Convert.ToDateTime(DateTime.ParseExact(messageModel.MessageDetail.PublishFromDate, "MM/dd/yyyy", CultureInfo.InvariantCulture));
+            messageModel.MessageDetail.PublishTo = Convert.ToDateTime(DateTime.ParseExact(messageModel.MessageDetail.PublishToDate, "MM/dd/yyyy", CultureInfo.InvariantCulture));
             var res = await this.repository.AddEditMessageDetail(messageModel.MessageDetail);
             if (res == null)
             {
