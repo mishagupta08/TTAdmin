@@ -732,8 +732,8 @@ namespace TTGarmentAdmin.Controllers
             }
 
             this.repository = new Repository();
-            messageModel.MessageDetail.PublishFrom =  Convert.ToDateTime(DateTime.ParseExact(messageModel.MessageDetail.PublishFromDate, "MM/dd/yyyy", CultureInfo.InvariantCulture));
-            messageModel.MessageDetail.PublishTo = Convert.ToDateTime(DateTime.ParseExact(messageModel.MessageDetail.PublishToDate, "MM/dd/yyyy", CultureInfo.InvariantCulture));
+            messageModel.MessageDetail.PublishFrom =  Convert.ToDateTime(DateTime.ParseExact(messageModel.MessageDetail.PublishFromDate, "MM-dd-yyyy", CultureInfo.InvariantCulture));
+            messageModel.MessageDetail.PublishTo = Convert.ToDateTime(DateTime.ParseExact(messageModel.MessageDetail.PublishToDate, "MM-dd-yyyy", CultureInfo.InvariantCulture));
             var res = await this.repository.AddEditMessageDetail(messageModel.MessageDetail);
             if (res == null)
             {
