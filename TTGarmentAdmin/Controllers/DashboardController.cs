@@ -869,13 +869,15 @@ namespace TTGarmentAdmin.Controllers
                 {
                     this.model.NotificationList = this.model.NotificationList.Where(r => (!string.IsNullOrEmpty(r.Notification) && r.Notification.ToLower().Contains(filterValue))).ToList();
                 }
+
+                foreach (var noti in this.model.NotificationList)
+                {
+                    noti.Date = Convert.ToDateTime(noti.DateString);
+                    // noti.DateString = noti.Date.ToString( "yyyy-MM-dd HH:mm tt");
+                }
             }
 
-            foreach (var noti in this.model.NotificationList)
-            {
-                noti.Date = Convert.ToDateTime(noti.DateString);
-                // noti.DateString = noti.Date.ToString( "yyyy-MM-dd HH:mm tt");
-            }
+            
 
             return View("NotificationListView", this.model);
         }
@@ -954,8 +956,16 @@ namespace TTGarmentAdmin.Controllers
         {
             this.repository = new Repository();
             this.model = new DashboardModel();
-            this.model.ProductDetail = await this.repository.ProductByIdView(Id);
-
+            if (string.IsNullOrEmpty(Id))
+            {
+                this.model.ProductDetail = new R_ProductMaster();
+                this.model.ProductDetail.Action = "Add";
+            }
+            else
+            {
+                this.model.ProductDetail = await this.repository.ProductByIdView(Id);
+                this.model.ProductDetail.Action = "Edit";
+            }
             return View("AddProductView", this.model);
         }
 
@@ -1402,11 +1412,19 @@ namespace TTGarmentAdmin.Controllers
             {
                 return Json("Please send complete detail.");
             }
-
+            Response res = new Response();
             this.repository = new Repository();
             var list = new List<R_ProductMaster>();
             list.Add(productModel.ProductDetail);
-            var res = await this.repository.EditProduct(list);
+            if (productModel.ProductDetail.Action == "Edit")
+            {
+                res = await this.repository.EditProduct(list);
+            }
+            else
+            {
+                res = await this.repository.AddBulkProduct(list);
+            }
+
             if (res == null)
             {
                 return Json("Something went wrong. Please try again later.");

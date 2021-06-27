@@ -44,7 +44,7 @@
     <div class="row">
         <form data-parsley-validate class="validateForm form-horizontal form-style" id="productForm" onsubmit="return SaveImagePath();">
             @Html.HiddenFor(m => m.ProductDetail.Id, new { name = "Id" })
-
+            @Html.HiddenFor(m => m.ProductDetail.Action, new { name = "Action" })
             <div class="form-group">
                 <label>Product Name</label>
                 @Html.TextBoxFor(m => m.ProductDetail.Name, new { @id = "Name", @required = "required", @class = "form-control", @placeholder = "Name" })

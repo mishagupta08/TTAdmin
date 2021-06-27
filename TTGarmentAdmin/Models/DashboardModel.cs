@@ -11,6 +11,8 @@ namespace TTGarmentAdmin.Models
     /// </summary>
     public class DashboardModel
     {
+       
+
         public IList<RetailerMaster> RetailerList { get; set; }
 
         public IList<R_OrderMaster> OrderList { get; set; }
