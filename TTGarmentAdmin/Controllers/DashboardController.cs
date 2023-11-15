@@ -977,6 +977,14 @@ namespace TTGarmentAdmin.Controllers
 
             return View("EncryptBarcode", result);
         }
+        public async Task<ActionResult> EncryptBarcodeTest()
+        {
+            this.repository = new Repository();
+            this.model = new DashboardModel();
+            var result = await this.repository.EncryptBarcodeTest();
+
+            return View("EncryptBarcodeTest", result);
+        }
 
         public async Task<ActionResult> GetRetailerPointsLedgerView(string filterType, string filterValue, string fromDate, string toDate)
         {

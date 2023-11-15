@@ -58,6 +58,8 @@ namespace TTGarmentAdmin
 
         private string EncryptBarcodeAction = "EncryptBarcodes";
 
+        private string EncryptBarcodeTestAction = "EncryptBarcodesTest";
+
         private string GetDistributerCityListAction = "GetDistributerCityList";
 
         private string GetDistributerListAction = "GetDistributerByCityName/";
@@ -263,6 +265,19 @@ namespace TTGarmentAdmin
         public async Task<string> EncryptBarcode()
         {
             var result = await CallGetFunction(EncryptBarcodeAction);
+            if (result == null)
+            {
+                return "Something went wrong.";
+            }
+            else
+            {
+                return result.ResponseValue;
+            }
+        }
+
+        public async Task<string> EncryptBarcodeTest()
+        {
+            var result = await CallGetFunction(EncryptBarcodeTestAction);
             if (result == null)
             {
                 return "Something went wrong.";
